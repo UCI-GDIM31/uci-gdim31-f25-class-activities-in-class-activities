@@ -18,10 +18,10 @@ public class Ball : MonoBehaviour
         // STEP 1 -------------------------------------------------------------
         // Uncomment ONE of the blow lines of code to ADD ONE
         //      to the value of the variable named '_bounces'.
-       // _bounces = _bounces + 2;
-        _bounces + 1
+        // _bounces = _bounces + 2;
+        //_bounces + 1
         //_bounces --;
-        //_bounces++;
+        _bounces++;
         //_bounces += 1
         // STEP 1 -------------------------------------------------------------
 
