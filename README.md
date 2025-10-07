@@ -1,8 +1,12 @@
 # in-class-activities
 ## Devlogs
 ### W1
-Write your W1 activity Devlog here.
 Hello world!
+
+10/6
+1. The r, g, b variables a float because they contain decimal points in its values.
+2. _bounce variable is an int because it utilizes whole numbers in its values.
+3. Step 4 part 2 taught me that I must end the line with a semicolon (;).
 ### W2
 Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
 
