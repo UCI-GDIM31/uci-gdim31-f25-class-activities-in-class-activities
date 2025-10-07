@@ -64,7 +64,7 @@ public class Ball : MonoBehaviour
 
         // STEP 4 -------------------------------------------------------------
         // Uncomment the below line and fix it to SUBTRACT 0.1 from the value of 'g'.
-        g -= 0.1f
+        g -= 0.1f;
         // STEP 4 -------------------------------------------------------------
 
         if (g < 0.0f)
