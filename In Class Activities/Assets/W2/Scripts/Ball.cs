@@ -107,7 +107,8 @@ public class Ball : MonoBehaviour
         //      r, g, and b, and then divide the result by 3.
         // Store the result in a variable named 'brightness'.
 
-        float brightness = (r + g + b) / 3; 
+        float brightness = (r + g + b);
+        brightness = brightness / 3;
         
         // STEP 8 -------------------------------------------------------------
 
