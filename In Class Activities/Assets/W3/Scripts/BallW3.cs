@@ -10,7 +10,7 @@ public class BallW3 : MonoBehaviour
      
     // ------------------------------------------------------------------------
     // This method is called by Unity whenever the ball hits something.
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)  
     {
         // STEP 1 -------------------------------------------------------------
         // We can access the member variables of another class using the '.' symbol.
@@ -24,7 +24,7 @@ public class BallW3 : MonoBehaviour
         //      of _speedMultiplier. TUNE that value in the Inspector and see
         //      what happens!
 
-        //rigidbody.linearvelocity *= speedmultiplier;
+        _rigidbody.linearVelocity *= _speedMultiplier;
 
         // STEP 1 -------------------------------------------------------------
 
