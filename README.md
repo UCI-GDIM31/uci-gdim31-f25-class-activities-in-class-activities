@@ -5,9 +5,16 @@ Write your W1 activity Devlog here.
 
 ### W2
 ### Answer1 Because ints can only show the integers which aren't fluet, bool also represents true or false, the string can only show the words or not numbers. So r,g,b variable can only be shown as floats clearly with changes.
-### Answer2 Because the number of Bounce could be the integers like 1, 21, 35... And it couldn't be the floats with decimal points, not the bool with true or false, or not the string with words.
-### Answer3 Because 
+### Answer2 Because the number of Bounce could be the integers like 1, 21, 35... And it couldn't be the floats with decimal points, not the bool with true or false, or not the string with words 
 ## Open-Source Assets
-### W1
+
+### W3
+### Answer1 I belong to Table 5, and I will be answering question 1.
+The input will include float x and float y. Float x refers to the moment when player's finger touches the screen. Float y refers to the moment when player's finger leaves the screen. In the body part of the method, we will substract y from x to obtain float z. If z is greater than 0.2s, then bool whetherHit equals true. The boolean type whetherHit variable will be the output. Input: float x (touch time); float y (leave time)； Output type: boolean
+### Answer2 Metaphor
+Class is a family recipe for how to make and present a dish that has been passed down through different generations. Components are the printed version of the recipe in a cookbook. Method is the cooking steps for this dish. Member variables are the ingredients of this dish.
+### Answer3 
+Regarding why balls get very bright after bouncing many times: each time a ball collides, its speed is multiplied by a speed factor, and if the speed exceeds a certain threshold, its color brightness is increased. Because balls in the scene collide frequently, the speed and brightness accumulate over time, causing balls that bounce many times to become extremely bright.
+
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
 - Low-poly environment: https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153 
