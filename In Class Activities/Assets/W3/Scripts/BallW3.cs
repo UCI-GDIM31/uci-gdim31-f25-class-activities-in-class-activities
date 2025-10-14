@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class BallW3
+public class BallW3 : MonoBehaviour
 {
     public SpriteRenderer ballRenderer;
     private Rigidbody2D _rigidbody;
