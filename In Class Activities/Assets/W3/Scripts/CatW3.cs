@@ -109,6 +109,9 @@ public class CatW3 : MonoBehaviour
             //
             // Try toggling the Destroy Cat When Dead setting on the Inspector,
             //      and see how the cat is removed ONLY when it's checked!
+            if (_health<=0 && _destroyCatWhenDead){
+                DestroyCat();
+            }
             
 
             // STEP 6 ---------------------------------------------------------
@@ -138,9 +141,7 @@ public class CatW3 : MonoBehaviour
         //      and store the result in _speechText's text variable.
         // This will look very similar to the above line to change _healthText ;)
 
-        GetHealthSpeechText (){
-            int
-        }
+       _speechText.text = GetHealthSpeechText ();
 
 
 
@@ -181,6 +182,7 @@ public class CatW3 : MonoBehaviour
         // Set the value of the _spriteRenderer's color variable to the value
         //      of the ball's ballRenderer's color variable.
         // This means you'll need to use the '.' twice to get to the color :)
+        _spriteRenderer.color = ball.ballRenderer.color;
 
 
         // STEP 7 -------------------------------------------------------------
