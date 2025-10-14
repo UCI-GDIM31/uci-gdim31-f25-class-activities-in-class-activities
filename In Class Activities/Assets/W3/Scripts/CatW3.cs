@@ -95,7 +95,7 @@ public class CatW3 : MonoBehaviour
             // Below this comment, CALL the method named DecreaseHealth.
             // Notice this method's return type is void- that means we don't
             //      have to store the result anywhere.
-            
+            DecreaseHealth();
 
             // STEP 2 ---------------------------------------------------------
 
@@ -128,6 +128,8 @@ public class CatW3 : MonoBehaviour
     //      Hint: there's just one operator missing!
     private void DecreaseHealth()
     {
+        _healthText.text = $"health = {_health}";
+    }
         // write Step 3 below this comment!
 
 
