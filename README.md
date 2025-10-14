@@ -20,8 +20,70 @@ explained why the line didn't work. This helped show that the correct way to
 set a color is by using "Color (r, g, b)" instead of adding the numbers together.
 
 
-## Open-Source Assets
-### W1
-- Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
-- Low-poly environment: https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153 
+### W3
+Start writing my Devlog Here.
 
+Discussion:
+For this week’s discussion, our group explored ideas for designing a 
+GetResponse method that determines a character’s dialogue reply in a 
+visual novel. The goal was to make the system respond dynamically to 
+the player’s choices and their relationship with the character.
+
+partner 1 idea: output is the string for dialogue, which comes its repsonses beased 
+on the input, the input are the dialogue options you choose
+
+partner 2 idea: we can integrate integer values from -4 to 4, which determines
+your relationship with characters level; less and negative values being integers to represent
+your low honor of friendship, and positive values being integers to represent your high honor 
+of friendship
+
+My idea: 
+I suggested incorporating boolean values to represent whether certain 
+relationship conditions are true or false—such as whether the player knows 
+the character’s secret, or whether they are currently on good or bad terms. 
+This adds a layer of logic-based branching that can determine the type of
+response beyond just numeric friendship levels. For example, even with a 
+high friendship score, a hidden truth (boolean flag) could unlock a unique, 
+more personal dialogue line.
+
+
+
+MonoBehaviour coding activity:
+
+Discussion:
+This week, our group focused on understanding the relationship between classes 
+and Components in Unity, using a metaphor to make the concept more intuitive.
+
+Metaphor:
+We compared a class to a blueprint for a robot, and a Component to an actual part 
+installed on the robot. The class defines what kind of part it is—what it looks like, 
+what it can do, and how it interacts with other parts—but it doesn’t physically exist 
+until you attach it to a robot (which would be the GameObject in Unity).
+
+
+In this metaphor:
+
+Classes are like the design documents or templates for different robot parts.
+Components are the real, functional parts attached to the robot, each 
+fulfilling its designed purpose.
+Member variables represent the traits or settings of each part—like size, 
+color, or power level—that make every instance unique.
+Methods represent the actions that part can perform, like moving, glowing, 
+or reacting to collisions.
+
+Together, they create a system where each GameObject can be customized and 
+brought to life by mixing and matching Components that follow their class blueprints.
+
+Why the balls get extremely bright:
+When the balls bounce too many times, their brightness increases rapidly because 
+the energy or intensity value (often tied to emission color or light intensity in 
+the material) isn’t being limited or reset. Each collision adds to the value, stacking 
+continuously and causing an overexposed glow in the Scene view. This might mean the 
+collision method keeps amplifying a property—like color intensity—without a maximum cap.
+
+Reflection:
+This activity really helped me visualize how Unity’s Component-based structure works. 
+Thinking in metaphors—like robots with interchangeable parts—made it easier to see how 
+scripts, variables, and behaviors fit together to make dynamic gameplay systems. It also 
+reminded me of the importance of controlling variable limits to prevent unexpected effects 
+(like the over-bright ball glitch), which ties directly into good coding habits and debugging awareness.
