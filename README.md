@@ -20,6 +20,12 @@ voidSetLightDimness(intSanity)
 	intbrightness = 100 - intSanity
 }
 
+Music is a very broad form of art that encapsulates several different genres, or "classes," many with their own set of each with their own signiture style, which can be dictated 
+in several ways. Songs of the same "class" may share instruments, which can be considered the specific "member variables," of the song, or by using similar techniques, such as a 
+riff during a rock song, which can be attributed to the methods of the song. More broadly, all these factors form the "components" of the song as a whole.
+
+I did not get to this part of the assignment.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 

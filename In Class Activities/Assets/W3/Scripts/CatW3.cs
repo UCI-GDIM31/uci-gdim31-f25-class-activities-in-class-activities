@@ -108,7 +108,14 @@ public class CatW3 : MonoBehaviour
             // Try toggling the Destroy Cat When Dead setting on the Inspector,
             //      and see how the cat is removed ONLY when it's checked!
             
-
+            if (_health <= 0)
+            {
+                _destroyCatWhenDead = true;
+            }
+            else
+            {
+                _destroyCatWhenDead = false;
+            }
             // STEP 6 ---------------------------------------------------------
         }
     }
@@ -178,7 +185,7 @@ public class CatW3 : MonoBehaviour
         //      of the ball's ballRenderer's color variable.
         // This means you'll need to use the '.' twice to get to the color :)
 
-
+        _spriteRenderer.color = ball.ballRenderer.color;
         // STEP 7 -------------------------------------------------------------
     }
     
