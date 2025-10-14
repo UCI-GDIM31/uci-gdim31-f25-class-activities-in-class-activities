@@ -24,7 +24,8 @@ Music is a very broad form of art that encapsulates several different genres, or
 in several ways. Songs of the same "class" may share instruments, which can be considered the specific "member variables," of the song, or by using similar techniques, such as a 
 riff during a rock song, which can be attributed to the methods of the song. More broadly, all these factors form the "components" of the song as a whole.
 
-I did not get to this part of the assignment.
+I didn't personally get to this part of the assignment, but if I were to assume, I would say that since the brightness of the ball is directly tied its speed, both on the x and y axis,
+and as the ball only gets faster as it continues to bounce against the walls / cat, it only becomes more radiant over time.
 
 ## Open-Source Assets
 ### W1
