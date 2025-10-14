@@ -14,6 +14,12 @@ Step 4 of Part 2 makes the mistake of of forgetting a semicolon at the end of th
 essentially telling the developer that the program couldn't find a semicolon on line 67, and now has no way calculating the color for the ball asset being that it can't output
 a g-value.
 
+### W3
+voidSetLightDimness(intSanity)
+{
+	intbrightness = 100 - intSanity
+}
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
