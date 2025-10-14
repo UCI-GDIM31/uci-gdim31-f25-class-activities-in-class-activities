@@ -95,7 +95,9 @@ public class CatW3 : MonoBehaviour
             // Below this comment, CALL the method named DecreaseHealth.
             // Notice this method's return type is void- that means we don't
             //      have to store the result anywhere.
-            
+            DecreaseHealth ();
+        
+
 
             // STEP 2 ---------------------------------------------------------
 
@@ -129,12 +131,18 @@ public class CatW3 : MonoBehaviour
     private void DecreaseHealth()
     {
         // write Step 3 below this comment!
-
+        _healthText.text = "health = " + _health--;
 
         // STEP 5 -------------------------------------------------------------
         // Once you've finished Step 4, CALL the GetHealthSpeechText method
         //      and store the result in _speechText's text variable.
         // This will look very similar to the above line to change _healthText ;)
+
+        GetHealthSpeechText (){
+            int
+        }
+
+
 
 
         // STEP 5 -------------------------------------------------------------
@@ -153,11 +161,16 @@ public class CatW3 : MonoBehaviour
     //      return "OH NO!".
     // 2. Otherwise, return "ouch".
 
-    //private ??? GetHealthSpeechText()
-    //{
-        // put the method body here!
-        
-    //}
+    private string GetHealthSpeechText()
+    {
+        if (_health < _maxHealth/2)  {
+                    return "OH NO!";
+        }
+        else 
+        {
+            return " ouch";
+        }
+    }
     
     // STEP 4 -----------------------------------------------------------------
 
