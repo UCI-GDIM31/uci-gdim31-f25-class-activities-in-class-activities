@@ -42,10 +42,6 @@ public class Ball : MonoBehaviour
 
         // STEP 2 -------------------------------------------------------------
         // Uncomment ONE of the below lines to ADD 0.1 to the value of 'r'.
-        //r += 0.1f
-        //r * 0.1;
-        //r = r + 0.1f;
-        //r = r * 0.1f;
         //r += 0.1;
         // STEP 2 -------------------------------------------------------------
 
