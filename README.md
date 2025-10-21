@@ -92,7 +92,7 @@ reminded me of the importance of controlling variable limits to prevent unexpect
 
 ### W4
 
-Tables 1-10. Lines to describe: 5, 22, and 25:
+My Table; Table 7: . Lines to describe: 5, 22, and 25:
 
 Lines 5:[SerializeField] private float _moveSpeed = 1.0f;
 
@@ -111,7 +111,7 @@ moves forward or backward along the z-axis.
 
 
 
-Tables 11-19. Lines to describe: 17, 28, and 32:
+Other Tables 11-19. Lines to describe: 17, 28, and 32:
 
 Line 17: if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
 
