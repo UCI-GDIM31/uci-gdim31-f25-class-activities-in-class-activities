@@ -27,6 +27,11 @@ riff during a rock song, which can be attributed to the methods of the song. Mor
 I didn't personally get to this part of the assignment, but if I were to assume, I would say that since the brightness of the ball is directly tied its speed, both on the x and y axis,
 and as the ball only gets faster as it continues to bounce against the walls / cat, it only becomes more radiant over time.
 
+### W4
+Line 17 sets the member variable "_isgrounded" to a voolean value in order to detect whether or not the player is currently in contact with the ground. Line 28 sets a conditional in which if both 
+conditions are met, being whether the player is currently on the ground and if the space bar is pressed, the player will be allowed to jump. In order to prevent players from inifinitely utilizing the 
+ability to jump, the conditional sets "_isgrounded" to false in order to prevent the conditions from being met.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
