@@ -20,7 +20,10 @@ Regarding why balls get very bright after bouncing many times: each time a ball 
 - Low-poly environment: https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153 
 
 ### W4
-### Actvity1: Table#5 
+### Actvity 1: Table#5 
 Line 5: _moveSpeed is a member variable, and the type is float. It is marked with [SerializeField] so it can be edited in Unity’s Inspector even though it is private. This variable controls how fast the cat moves. 
 Line 22: transform is a Component of the cat GameObject. The method parameters are (0, 0, translation), which means it moves the cat forward or backward on the z-axis, but does not move it on the x-axis or y-axis.
 Line 25: _rigidBody is a Component of type Rigidbody. This line is setting the linearVelocity property. The type of linearVelocity is Vector3, which stores speed in the x, y, and z directions. The new value keeps the x and z speeds the same but sets the y speed to 0, so the cat’s jump starts from zero vertical speed.
+### Activity 2:
+I add my Rigidbodies to the ball and the cat, and only check the goal as in trigger. I gave the Cat a Rigidbody so it could interact with the ball physically but still be controlled smoothly by the player. The SoccerBall with a Rigidbody could respond to gravity, collisions, and bouncing naturally. The Goal’s BoxCollider was set as a trigger because I wanted the ball to pass through it while still detecting when a goal was made.
+My cat rotated in the sky when it hit the ball at first. Then I freeze the rotation of the x-axis and z-axis, so it could move along the right direction. Moreover, the ball didn’t react when entering the goal. I realized it was because the Goal’s collider didn’t have Is Trigger enabled and the tag “Goal” wasn’t assigned. After fixing those two things, the game works perfectly. 
