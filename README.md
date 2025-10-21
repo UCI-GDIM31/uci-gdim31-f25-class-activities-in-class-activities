@@ -26,6 +26,10 @@ It's an if statement, checking if _isGrunded is true or false. GetKeyDown is a m
 
 Line 32
 _isGrounded is set to false at the end of the if statement.
+
+For the cat we put Rigidbody and Capsule Collider on it because it needs to collide with the ball and to interact with it as well. The cat is also an abnormal shape so Capsule Collider is the right component. SoccerBall we put n Rigidbody and Sphere Collider because the ball needs to collide with the cat and is the shape of a sphere. The Goal has Box Collider and "Is Trigger" is one because the ball needs to pass through for it to count as a goal.
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
