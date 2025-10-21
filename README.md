@@ -87,3 +87,43 @@ Thinking in metaphors—like robots with interchangeable parts—made it easier to s
 scripts, variables, and behaviors fit together to make dynamic gameplay systems. It also 
 reminded me of the importance of controlling variable limits to prevent unexpected effects 
 (like the over-bright ball glitch), which ties directly into good coding habits and debugging awareness.
+
+
+
+### W4
+
+Tables 1-10. Lines to describe: 5, 22, and 25:
+
+Lines 5:[SerializeField] private float _moveSpeed = 1.0f;
+
+Explanation: _moveSpeed is a member variable of type float, used to store how fast the cat moves. The [SerializeField] 
+attribute makes it appear in the Inspector window even though it’s private.
+
+Line 22: float translation = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
+
+Explanation:This line creates a local float variable called translation that multiplies the player’s input from 
+Input.GetAxis("Vertical") by _moveSpeed and Time.deltaTime to calculate smooth movement.
+
+Line 25:transform.Translate(0, 0, translation);
+
+Explanation: Calls the method transform.Translate() to move the GameObject by (0, 0, translation), meaning it 
+moves forward or backward along the z-axis.
+
+
+
+Tables 11-19. Lines to describe: 17, 28, and 32:
+
+Line 17: if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+
+Explanation: Line 17: Uses an if statement to check if the spacebar is pressed (Input.GetKeyDown(KeyCode.Space)) and 
+if _isGrounded is true, meaning the cat can jump.
+
+Line 28: _animator.SetBool(_isWalkingName, true);
+
+Explanation: Line 28: Calls _animator.SetBool() with the parameters _isWalkingName and true to play the walking 
+animation when moving.
+
+Line 32: private void OnCollisionStay(Collision collision)
+
+Explanation: Defines the method OnCollisionStay(Collision collision), which runs whenever the GameObject 
+stays in contact with another collider.""
