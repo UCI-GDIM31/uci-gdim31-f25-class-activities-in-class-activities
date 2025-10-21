@@ -8,6 +8,7 @@ public class SoccerBall : MonoBehaviour
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private ParticleSystem _goalVFX;
     private int points;
+    private float lastGoalTime;
 
     // STEP 1 -----------------------------------------------------------------
     // The OnTriggerEnter method is a collision method called by Unity that
@@ -58,7 +59,7 @@ public class SoccerBall : MonoBehaviour
         Debug.Log("SoccerBall detected a collision with a trigger collider!");
         _goalVFX.Play();
         points++;
-        _pointsText_ = "Points " + points;
+        _pointsText.text = "Points " + points;
         lastGoalTime = 0f;
         
     }
@@ -110,7 +111,8 @@ public class SoccerBall : MonoBehaviour
 
     void Update()
     {
-        _timeText.text = Time Since last Goal:
+        lastGoalTime += Time.deltaTime;
+        _timeText.text = "Time Since last Goal:" + lastGoalTime;
     }
 
     // STEP 6 -----------------------------------------------------------------
