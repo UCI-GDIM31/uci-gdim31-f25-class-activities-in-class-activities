@@ -28,9 +28,14 @@ I didn't personally get to this part of the assignment, but if I were to assume,
 and as the ball only gets faster as it continues to bounce against the walls / cat, it only becomes more radiant over time.
 
 ### W4
+Group 15:
 Line 17 sets the member variable "_isgrounded" to a voolean value in order to detect whether or not the player is currently in contact with the ground. Line 28 sets a conditional in which if both 
 conditions are met, being whether the player is currently on the ground and if the space bar is pressed, the player will be allowed to jump. In order to prevent players from inifinitely utilizing the 
 ability to jump, the conditional sets "_isgrounded" to false in order to prevent the conditions from being met.
+
+Worked with Group 15 and came to the conclusion that being that the cat and ball were both gameObjects that required freeform movement, they needed rigbodies. If the ball were to be kicked, for instance, 
+it would be necessary for Unity to determine how it interacts depending on the force exerted by the cat, simulating movement physics. Inversely, the goal post did not require this property, it will not 
+move and rather works as a physical goal to the player, hence Is Trigger would be enage to detect whenever a goal is being made.
 
 ## Open-Source Assets
 ### W1
