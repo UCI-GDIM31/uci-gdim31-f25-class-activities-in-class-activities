@@ -92,6 +92,8 @@ reminded me of the importance of controlling variable limits to prevent unexpect
 
 ### W4
 
+Activity 1: *activity 2 is skipped*
+
 My Table; Table 7: . Lines to describe: 5, 22, and 25:
 
 Lines 5:[SerializeField] private float _moveSpeed = 1.0f;
@@ -127,3 +129,26 @@ Line 32: private void OnCollisionStay(Collision collision)
 
 Explanation: Defines the method OnCollisionStay(Collision collision), which runs whenever the GameObject 
 stays in contact with another collider.""
+
+
+Activity 3:
+
+Table # 7
+
+Answer the questions:
+
+1. What solution did you come up with for the collider activity, and why? Specifically- which objects did you add Rigidbodies to, and which object(s) did you check Is Trigger on?
+2. IF your game did not work perfectly the first time you tested it, talk about what you had to fix.
+
+Response 1: Collider Activity Solution:
+
+We added Rigidbody components to the Cat and the SoccerBall so they could move and interact with physics. 
+The Goal did not need a Rigidbody because it doesn’t move. We checked Is Trigger on the Goal’s collider 
+so the ball could pass through it but still detect when it scores. The Cat and SoccerBall colliders were 
+left as solid so they could bounce off each other and the walls.
+
+Response 2: Fixes We Made:
+
+At first, the ball didn’t detect the goal correctly. We realized we forgot to check Is Trigger on 
+the Goal’s collider. After fixing that, the ball could score properly. We also had to freeze rotation 
+on the X and Z axes for the Cat and SoccerBall to stop them from falling over.
