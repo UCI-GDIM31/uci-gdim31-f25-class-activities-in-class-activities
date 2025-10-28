@@ -35,7 +35,7 @@ public class CatW5 : MonoBehaviour
         //
         Vector3 translation = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             translation = Vector3.forward;
             _moveSpeed = 1.0f;
