@@ -37,6 +37,17 @@ Worked with Group 15 and came to the conclusion that being that the cat and ball
 it would be necessary for Unity to determine how it interacts depending on the force exerted by the cat, simulating movement physics. Inversely, the goal post did not require this property, it will not 
 move and rather works as a physical goal to the player, hence Is Trigger would be enage to detect whenever a goal is being made.
 
+### W5
+Why would _moveSpeed need to be multiplyed by Time.deltaTime, what effect does it have?
+Removes dependency on frame rate and standardizes movement to be based on the time that passes between each frame.
+
+1. Looking at the script for the cat, it can be understood that the deer will need a SerializeField so that both movement speed and turn speed could be adjusted within the inspector.
+2. Considering that target will need to be determined witbin the inspector as well, there will probably need to be SerializeField to determine the game object target will represent.
+3. Transform variable SerializeField in order to set path
+4. Set _target to the user inputted GameObject.
+5. Set _target to _path
+6. Set destination to _path position.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
