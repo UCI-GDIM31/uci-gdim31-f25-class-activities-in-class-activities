@@ -34,7 +34,7 @@ public class CatW5 : MonoBehaviour
         //
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Vector3 movement = Vector3.up;
+            transform.forward = Vector3.forward;
         }
         // STEP 2
         // After Step 1 is working, add more code to make it possible to flip
