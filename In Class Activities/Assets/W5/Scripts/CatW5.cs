@@ -32,6 +32,10 @@ public class CatW5 : MonoBehaviour
         //      Should I modify translation with Vector addition, or multiplication,
         //          or both?
         //
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Vector3 forward = Vector3.up;
+        }
         // STEP 2
         // After Step 1 is working, add more code to make it possible to flip
         //      the player's control scheme.
