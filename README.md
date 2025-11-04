@@ -35,3 +35,30 @@ My question is about the page 13 on the Week 5 pre-learning slide. My question i
 The member variables I need for the DeerW5: I plan to use the transform to change the position and rotation of the deer to let it walk, and directly to walk to the position of the object.
 The methods the DeerW5 class need: I think we need the methods of starts() to start the game, and use updates() to change the direction and way. 
 what should the methods do: I plan to use Call GetComponent<NavMeshAgent>() to get the NavMeshAgent on the same Deer GameObject and store it in _agent. And also use agent to set the destination to the target’s position by calling _agent.SetDestination(_target.position);
+
+### W6
+### Acitivity 1:
+General C# Coding
+Variable, types, names, value W2
+Int, float, boolean, string 
+Variable scope W3
+Methods W3
+Class W3, W4
+    i. data (variables)  & actions (methods)
+If statement W2
+Else if statement
+Conditions
+&&, ||
+==, >=, <=, >, <
+For loop W6pre
+Private and public
+Calculation W2
++, -, *, /
++=, -=, *=, /=
+How to write notes // or /* */
+; must appear at the end of a line W2
+Array W6pre
+
+Link of google doc:https://docs.google.com/document/d/1exNqQE_zGuOoztND9FT3ldDwkXjJ6m8a8oRDWERaMyg/edit?usp=sharing
+### Activity 2:
+My plan for this activity: I need to add Member variables (fields), 
