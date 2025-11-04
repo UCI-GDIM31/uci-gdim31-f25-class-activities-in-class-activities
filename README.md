@@ -61,4 +61,9 @@ Array W6pre
 
 Link of google doc:https://docs.google.com/document/d/1exNqQE_zGuOoztND9FT3ldDwkXjJ6m8a8oRDWERaMyg/edit?usp=sharing
 ### Activity 2:
-My plan for this activity: I need to add Member variables (fields), 
+My plan for this activity What member variables does this class need?
+I need variables of public float speed to lets us control how fast the bat moves (editable in the Inspector), I need public Transform target to stores a reference to the Cat object so the bat knows what to chase, and I need private bool _isChasing to keeps track of whether the bat is currently chasing the Cat or not.
+What methods does this class need?
+I need the methods of Start(), Update(), and need the public void StartChasing() to set _isChasing to true, allowing the bat to start moving toward the Cat.
+What should the method(s) do?
+The methods of Start() can call StartChasing() so the bat immediately begins chasing when the game starts. And the Update() needs check if _isChasing is true; if yes, move the bat toward the Cat using Vector2.MoveTowards() at the given speed. While the StartChasing() can turn chasing on, and the StopChasing(): turn chasing off.
