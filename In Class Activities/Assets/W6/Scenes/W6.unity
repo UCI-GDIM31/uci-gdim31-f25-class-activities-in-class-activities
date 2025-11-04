@@ -5981,6 +5981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925081787}
   - component: {fileID: 925081786}
+  - component: {fileID: 925081788}
   m_Layer: 0
   m_Name: Bats
   m_TagString: Untagged
@@ -6005,6 +6006,8 @@ MonoBehaviour:
   _timeBetweenNewMessages: 0.5
   _playerTransform: {fileID: 137124478}
   _reactionUiPrefab: {fileID: 1213822324474933021, guid: 57c2a2a51066041a1985ab96803a3aa7, type: 3}
+  _bats: []
+  _messages: []
   _newTextTimers: []
 --- !u!4 &925081787
 Transform:
@@ -6031,6 +6034,19 @@ Transform:
   - {fileID: 1583297591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &925081788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925081785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6b1ad80dd1448e78de456c451cad82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BatW6
+  _speed: 4
 --- !u!1 &1077408843
 GameObject:
   m_ObjectHideFlags: 0
