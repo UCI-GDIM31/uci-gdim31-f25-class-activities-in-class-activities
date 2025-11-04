@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BatManager : MonoBehaviour
 {
@@ -9,16 +10,20 @@ public class BatManager : MonoBehaviour
     [SerializeField] private float _timeBetweenNewMessages = 0.5f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private TMP_Text _reactionUiPrefab;
+    [SerializeField] private Transform _player;
     // STEP 1 -----------------------------------------------------------------
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
-    
+
+    [SerializeField] private GameObject[] _bats;
+
     // STEP 1 -----------------------------------------------------------------
 
     // STEP 3 -----------------------------------------------------------------
     // Add a member variable named "_messages" that's an array of strings.
     // In the Inspector, add at least a few different messages for the bats to
     //      say when they reach the player.
+    [SerializeField] private string[] _messages;
     
     // STEP 3 -----------------------------------------------------------------
 
@@ -64,6 +69,14 @@ public class BatManager : MonoBehaviour
         //      to help you with that distance check :)
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
         //
+        for (int i=0; i < 10; i++)
+        {
+            GameObject Bat = _bats[i];
+            if (Vector3.Distance(Bat.transform.position, _player.position) <= _interactDistance)
+            {
+                Bat.EnableChase(_player.position);
+            }
+        }
         // STEP 4
         // Also inside this for loop, if the distance between the bat and the
         //      player is less than _overlapDistance, call CreateReactions()
