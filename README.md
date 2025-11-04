@@ -49,9 +49,10 @@ Removes dependency on frame rate and standardizes movement to be based on the ti
 6. Set destination to _path position.
 
 ### W6
-[category assignment]{https://docs.google.com/document/d/12El8B1DVwCrcYU4DHfi3xilsWEET20KrlgRqnEkWHi4/edit?tab=t.0#heading=h.b9ney94anmsi}
+[User Resouce Guide]{https://docs.google.com/document/d/12El8B1DVwCrcYU4DHfi3xilsWEET20KrlgRqnEkWHi4/edit?tab=t.0#heading=h.b9ney94anmsi}
 
-Plan to create BatW6 class (made with Jasmine Caicedo)
+Plan to create BatW6 class (made with Jasmine Caicedo):
+
 Make serialized value for speed 
 Make a transform so the bats move
 Make a transform var for the player so we can keep track of them and move to their position later
