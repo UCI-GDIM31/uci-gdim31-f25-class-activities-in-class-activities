@@ -213,5 +213,7 @@ testing incrementally, and using Unity’s built-in systems instead of reinventi
 
 ### W6
 
-
+## Activity 1: Class Resource Guide
+**Assigned Category:** Unity Coding
+[View our shared Google Doc] => (https://docs.google.com/document/d/1JjeQbCCUjY07LrZi49c0iomh2LtX_U5325lBy6n0Y44/edit?tab=t.0)
 
