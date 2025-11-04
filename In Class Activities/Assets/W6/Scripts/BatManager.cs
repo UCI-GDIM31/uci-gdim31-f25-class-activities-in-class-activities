@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UIElements;
 
 public class BatManager : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class BatManager : MonoBehaviour
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
 
-    [SerializeField] private GameObject[] _bats;
+    [SerializeField] private BatW6[] _bats;
 
     // STEP 1 -----------------------------------------------------------------
 
@@ -71,10 +70,14 @@ public class BatManager : MonoBehaviour
         //
         for (int i=0; i < 10; i++)
         {
-            GameObject Bat = _bats[i];
+            BatW6 Bat = _bats[i];
             if (Vector3.Distance(Bat.transform.position, _player.position) <= _interactDistance)
             {
-                Bat.EnableChase(_player.position);
+                Bat.EnableChase(_playerTransform);
+            }
+            if (Vector3.Distance(Bat.transform.position, _player.position) <= _overlapDistance)
+            {
+                CreateReactions(Bat);
             }
         }
         // STEP 4

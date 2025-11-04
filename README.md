@@ -48,6 +48,18 @@ Removes dependency on frame rate and standardizes movement to be based on the ti
 5. Set _target to _path
 6. Set destination to _path position.
 
+### W6
+[category assignment]{https://docs.google.com/document/d/12El8B1DVwCrcYU4DHfi3xilsWEET20KrlgRqnEkWHi4/edit?tab=t.0#heading=h.b9ney94anmsi}
+
+Plan to create BatW6 class (made with Jasmine Caicedo)
+Make serialized value for speed 
+Make a transform so the bats move
+Make a transform var for the player so we can keep track of them and move to their position later
+Set it to 1 originally (the speed)
+Use on enable to make the chasing true
+Then make another function on disable turn off the chasing, this goes inside the void start so that they don't all immediately flock you as soon as the game starts, they will move once you get close to them
+Then make a function that constantly updates your bats to go and fly to the player, this doesn't happen until the bats are triggered to move though
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
