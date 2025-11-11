@@ -70,14 +70,14 @@ public class BatManager : MonoBehaviour
         //
         for (int i=0; i < 10; i++)
         {
-            BatW6 Bat = _bats[i];
-            if (Vector3.Distance(Bat.transform.position, _player.position) <= _interactDistance)
+            BatW6 bat = _bats[i];
+            if (Vector3.Distance(bat.transform.position, _player.position) <= _interactDistance)
             {
-                Bat.EnableChase(_playerTransform);
+                bat.EnableChase(_playerTransform);
             }
-            if (Vector3.Distance(Bat.transform.position, _player.position) <= _overlapDistance)
+            if (Vector3.Distance(bat.transform.position, _player.position) <= _overlapDistance)
             {
-                CreateReactions(Bat);
+                CreateReactions(bat);
             }
         }
         // STEP 4
@@ -108,6 +108,8 @@ public class BatManager : MonoBehaviour
         //
         // The first argument to SpawnReactionUI is same bat in the parameters
         //      of CreateReactions.
+        Random.Range(0, _messages.Length);
+        SpawnReactionUI(bat);
         
         // STEP 5 -------------------------------------------------------------
     }

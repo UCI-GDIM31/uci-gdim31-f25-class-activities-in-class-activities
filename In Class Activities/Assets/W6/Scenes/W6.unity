@@ -6033,6 +6033,7 @@ MonoBehaviour:
   _timeBetweenNewMessages: 0.5
   _playerTransform: {fileID: 137124478}
   _reactionUiPrefab: {fileID: 1213822324474933021, guid: 57c2a2a51066041a1985ab96803a3aa7, type: 3}
+  _player: {fileID: 0}
   _bats:
   - {fileID: 1639799780}
   - {fileID: 1492021326}
@@ -6044,6 +6045,12 @@ MonoBehaviour:
   - {fileID: 1077408843}
   - {fileID: 2130503363}
   - {fileID: 1583297588}
+  _messages:
+  - I'm a spooky bat :O
+  - I hate you
+  - Sorry for that other guy man :(
+  - I'M GONNA GIVE YOU RABIES
+  - Yum
   _newTextTimers: []
 --- !u!4 &925081787
 Transform:
