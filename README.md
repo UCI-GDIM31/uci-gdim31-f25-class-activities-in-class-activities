@@ -217,3 +217,37 @@ testing incrementally, and using Unity’s built-in systems instead of reinventi
 **Assigned Category:** Unity Coding
 [View our shared Google Doc] => (https://docs.google.com/document/d/1JjeQbCCUjY07LrZi49c0iomh2LtX_U5325lBy6n0Y44/edit?tab=t.0)
 
+
+### W7
+
+Link to Group W7 Game Design Planning Doc: [https://docs.google.com/document/d/10R14qZZetU1eLqxvVqzBbsszbVETJhnGCUluOARTfZg/edit?tab=t.0]
+
+Project Summary:
+Our group designed a 2D platformer inspired by Super Mario. The goal was to plan out all core systems—Gameplay, 
+Physics, Animation, UI, and Environment—so that we could visualize how each would function together in Unity.
+
+My Role (Physics & Animation):
+I focused on defining how the player, enemies, and environment interact through Unity Components such as Rigidbody2D, 
+Colliders, and Animator Controllers. I detailed how jump mechanics, enemy collisions, and checkpoints tie into the 
+player’s animations, including transitions for idle, running, jumping, and falling. These systems are connected so 
+the physics-driven motion automatically updates the animation state in real time, creating smooth and responsive movement.
+
+Group Collaboration:
+We refined the plan together so that the gameplay logic, physics, and visuals all overlap seamlessly—for example, 
+using collisions to trigger both score changes and animation cues.
+
+
+Part 1 – Reflection Question
+
+Q: What was wrong with the code in Step 2?
+The original Step 2 line:
+
+transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
+
+
+A:
+This line always moved the Muskrat in the world’s forward (Z) direction, ignoring the Muskrat’s own rotation. 
+Because of this, movement stayed locked to the global axis instead of following where the Muskrat was facing.
+
+The correct approach is to use transform.forward rather than Vector3.forward, ensuring the Muskrat moves 
+relative to its local orientation and correctly follows its rotation.
