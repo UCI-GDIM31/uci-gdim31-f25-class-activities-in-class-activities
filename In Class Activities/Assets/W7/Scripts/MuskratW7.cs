@@ -46,12 +46,17 @@ public class MuskratW7 : MonoBehaviour
         // You might want to look below Step 3 for an example :D
         
         float leftright = Input.GetAxis("Horizontal");
-        
+        float forward = Input.GetAxis("Vertical");
 
 
         // STEP 3 -------------------------------------------------------------
+        Vector3 worldUp = transform.TransformDirection(Vector3.up);
+        transform.RotateAround(
+            _sphereTransform.position,
+            worldUp,
+            leftright * _rotationSpeed * Time.deltaTime
+        );
 
-        float forward = Input.GetAxis("Vertical");
         Vector3 axis = transform.TransformDirection(Vector3.right);
         transform.RotateAround(
             _sphereTransform.position,
@@ -65,7 +70,12 @@ public class MuskratW7 : MonoBehaviour
         //      the Muskrat.
         // The Muskrat should never play the "flying" animation while on a
         //      bubble.
-
+        if (_animator != null)
+        {
+            _animator.SetBool("flying", false);
+            bool isMovingOnBubble = Mathf.Abs(leftright) > 0.05f || Mathf.Abs(forward) > 0.05f;
+            _animator.SetBool("running", isMovingOnBubble);
+        }
 
         // STEP 5 -------------------------------------------------------------
     }
@@ -86,7 +96,7 @@ public class MuskratW7 : MonoBehaviour
         //      like up, left, right, or forward.
 
         float leftright = Input.GetAxis("Horizontal");
-
+        transform.Rotate(Vector3.up * (leftright * _rotationSpeed * Time.deltaTime));
         // STEP 1 -------------------------------------------------------------
 
 
@@ -107,8 +117,21 @@ public class MuskratW7 : MonoBehaviour
         // Use _rigidbody.linearVelocity.
         // You may also find the absolute value method, Mathf.Abs(), helpful:
         //      https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mathf.Abs.html
+        if (_animator != null)
+        {
+            float speedMag = 0f;
+#if UNITY_6000_0_OR_NEWER
+            speedMag = _rigidbody != null ? _rigidbody.linearVelocity.magnitude : 0f;
+#else
+speedMag = _rigidbody != null ? _rigidbody.velocity.magnitude : 0f;
+#endif
+            if (speedMag < 0.01f)
+                speedMag = Mathf.Abs(movement) * _moveSpeed;
 
-        
+            _animator.SetBool("flying", false);
+            _animator.SetBool("running", speedMag > 0.1f);
+        }
+
         // STEP 4 -------------------------------------------------------------
     }
 
@@ -127,6 +150,11 @@ public class MuskratW7 : MonoBehaviour
             }
 
             _orbitMode = false;
+            if (_animator != null)
+            {
+                _animator.SetBool("flying", true);
+                _animator.SetBool("running", false);
+            }
         }
     }
 
@@ -148,6 +176,11 @@ public class MuskratW7 : MonoBehaviour
                 contact.point,
                 Quaternion.LookRotation(tangent, contact.normal)
             );
+            if (_animator != null)
+            {
+                _animator.SetBool("flying", false);
+                _animator.SetBool("running", false);
+            }
         }
     }
 }
