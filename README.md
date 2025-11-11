@@ -67,3 +67,12 @@ What methods does this class need?
 I need the methods of Start(), Update(), and need the public void StartChasing() to set _isChasing to true, allowing the bat to start moving toward the Cat.
 What should the method(s) do?
 The methods of Start() can call StartChasing() so the bat immediately begins chasing when the game starts. And the Update() needs check if _isChasing is true; if yes, move the bat toward the Cat using Vector2.MoveTowards() at the given speed. While the StartChasing() can turn chasing on, and the StopChasing(): turn chasing off.
+
+### W7
+### Acitivity 1:
+The link of our doc: https://docs.google.com/document/d/1TsVke4FYWiPQJM1o9TWKmZdGuEjed6uXTYwZxrXfC3I/edit?usp=sharing
+I mainly do the part of gameplay and environment of this outline. 
+### Activity 2.1:
+My plan for this project is to first produce two labeled figures that show the Muskrat’s local axes. One is flat ground, and another is on a bubble surface (where Up = surface normal). And I need to make the  Walk using WASD, Jump with Space, Stick and align to bubble surfaces, and Switch animations between Idle / Run / Fly.
+### Activity 2.2:
+The problem in Step 2 was using Vector3.up as the Muskrat’s “up” direction. That only works on flat ground. On the bubbles, the real “up” should be the surface normal (hit.normal). Because of this, the Muskrat’s gravity and movement followed the world’s up instead of the bubble’s curve, causing it to slide or float away. The fix is to use the surface normal as the local up, move along the tangent plane, apply gravity along -up, and align the Muskrat’s rotation with the bubble’s surface.
