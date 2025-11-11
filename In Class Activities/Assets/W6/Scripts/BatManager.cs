@@ -109,7 +109,7 @@ public class BatManager : MonoBehaviour
         // The first argument to SpawnReactionUI is same bat in the parameters
         //      of CreateReactions.
         Random.Range(0, _messages.Length);
-        SpawnReactionUI(bat);
+        //SpawnReactionUI(bat);
         
         // STEP 5 -------------------------------------------------------------
     }

@@ -61,6 +61,15 @@ Use on enable to make the chasing true
 Then make another function on disable turn off the chasing, this goes inside the void start so that they don't all immediately flock you as soon as the game starts, they will move once you get close to them
 Then make a function that constantly updates your bats to go and fly to the player, this doesn't happen until the bats are triggered to move though
 
+### W7
+#### I
+The game design concept shares a document with the Unity Resource Guide, and is found as a seperate tab within said document. 
+[Game Design Concept] {https://docs.google.com/document/d/12El8B1DVwCrcYU4DHfi3xilsWEET20KrlgRqnEkWHi4/edit?tab=t.n15fr0ty9u79#heading=h.q4s6t27voqk3}
+
+#### II
+Step 2 transforms the Mustrat GameObject in regards to its position but that only allows it to move in relation to the world space instead of its own axis. Translate specifies that the movement 
+taking place is in accordance to the specified GameObject, and will therefore use the correct axis when calculating its movement across the world space.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
