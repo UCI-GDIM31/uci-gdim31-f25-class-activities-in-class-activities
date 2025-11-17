@@ -12,46 +12,35 @@ public class CatW5 : MonoBehaviour
     private void Update()
     {
         // STEP 1 & 2 ---------------------------------------------------------
-        // STEP 1
-        // This CatW5 class is a Component on the Cat GameObject. It controls
-        //      the cat's movement.
-        //
-        // The Cat should move forwards and backwards with the W and S keys.
-        //
-        // Use the "static properties" listed under the Vector3 documentation:
-        //  https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
-        //
-        // to change the value of the translation variable,
-        // and then call Translate on this GameObject's transform to make it move
-        // using translation, _moveSpeed, and Time.deltaTime.
-        //
-        // Ask yourself:
-        //      Which axis moves the cat forwards and backwards?
-        //      Which Vector3 static property would be useful here based on
-        //          changing that axis?
-        //      Should I modify translation with Vector addition, or multiplication,
-        //          or both?
-        //
-        // STEP 2
-        // After Step 1 is working, add more code to make it possible to flip
-        //      the player's control scheme.
-        // The _flipWSControls member variable, which we can change in the Inspector,
-        //      determines if our controls should be flipped.
-        // If _flipWSControls is true, interpret the value of translation as the
-        //      OPPOSITE value, so that W moves the player backwards and S moves
-        //      them forwards.
-        //
-        // MULTIPLY one of your vectors with a certain value to do this. >:)
+        // STEP 1:
+        // Move forwards/backwards with W and S (Vertical axis).
+        // Use Vector3.forward/back (static Vector3 properties) and Translate
+        // together with _moveSpeed and Time.deltaTime.
 
         Vector3 translation = Vector3.zero;
-        
 
+        // Get vertical input (W / S)
+        float vertical = Input.GetAxis("Vertical"); // W = +1, S = -1
 
-        // STEP 1 & 2 ---------------------------------------------------------
+        // Use Vector3.forward (local forward) scaled by input
+        translation = Vector3.forward * vertical;
 
+        // STEP 2:
+        // If _flipWSControls is true, interpret the translation as the opposite value.
+        if (_flipWSControls)
+        {
+            // Multiply translation by -1 to flip controls
+            translation *= -1f;
+        }
+
+        // Apply movement: translation defines direction, multiply by speed and deltaTime
+        transform.Translate(translation * _moveSpeed * Time.deltaTime);
+
+        // Rotation (unchanged)
         float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);
 
+        // Animator: walking if moving or rotating
         if (translation.magnitude != 0.0f || rotation != 0.0f)
         {
             _animator.SetBool(_isWalkingName, true);

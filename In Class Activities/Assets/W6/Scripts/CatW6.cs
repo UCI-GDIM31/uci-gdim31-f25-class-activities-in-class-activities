@@ -5,54 +5,43 @@ public class CatW6 : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _jump;
+    [SerializeField] private float _speed = 5.0f;
+    [SerializeField] private float _jump = 5.0f;
 
     private bool _facingLeft;
     private bool _isGrounded = true;
 
-    // ------------------------------------------------------------------------
     private void Update()
     {
-        // Detect input to move player left/right
-        _rigidbody.linearVelocity = new Vector2(
-            Input.GetAxis("Horizontal") * _speed,
-            _rigidbody.linearVelocity.y
-        );
+        // Move left/right
+        float move = Input.GetAxis("Horizontal");
+        _rigidbody.linearVelocity = new Vector2(move * _speed, _rigidbody.linearVelocity.y);
 
-        // Detect input to jump
-        if (Input.GetKey(KeyCode.Space) && _isGrounded)
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _jump);
             _isGrounded = false;
-
-            _rigidbody.linearVelocity = new Vector2(
-                _rigidbody.linearVelocity.x,
-                _jump
-            );
         }
 
-        // Change character facing 
-        if (Input.GetAxis("Horizontal") < 0 && !_facingLeft)
+        // Flip sprite
+        if (move < 0 && !_facingLeft)
         {
             _spriteRenderer.flipX = true;
             _facingLeft = true;
         }
-        else if (Input.GetAxis("Horizontal") > 0 && _facingLeft)
+        else if (move > 0 && _facingLeft)
         {
             _spriteRenderer.flipX = false;
             _facingLeft = false;
         }
 
-        // Set animation state parameters
-        _animator.SetBool("walking", _rigidbody.linearVelocity.x != 0.0f);
+        _animator.SetBool("walking", move != 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("ground"))
-        {
+        if (collision.gameObject.CompareTag("ground"))
             _isGrounded = true;
-        }
     }
-
 }
