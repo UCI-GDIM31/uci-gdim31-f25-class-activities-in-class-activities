@@ -70,6 +70,9 @@ The game design concept shares a document with the Unity Resource Guide, and is 
 Step 2 transforms the Mustrat GameObject in regards to its position but that only allows it to move in relation to the world space instead of its own axis. Translate specifies that the movement 
 taking place is in accordance to the specified GameObject, and will therefore use the correct axis when calculating its movement across the world space.
 
+### W8
+[Final Plan] {https://docs.google.com/document/d/1WG5pIYocxg5BKKZbXrPqvhCKxZF10_GiZn3kfh60V9w/edit?tab=t.0#heading=h.9z308e8idhyq}
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 

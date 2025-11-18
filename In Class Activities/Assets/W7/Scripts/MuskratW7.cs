@@ -119,7 +119,7 @@ public class MuskratW7 : MonoBehaviour
         else
         {
             _animator.SetBool("flying", false);
-        };
+        }
 
         if (Mathf.Abs(_rigidbody.linearVelocity.x) > 0.3f)
         {
