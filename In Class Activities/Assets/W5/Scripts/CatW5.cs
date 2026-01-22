@@ -9,8 +9,6 @@ public class CatW5 : MonoBehaviour
 
     private string _isWalkingName = "IsWalking";
 
-    private void Update()
-    {
         // STEP 1 & 2 ---------------------------------------------------------
         // STEP 1
         // This CatW5 class is a Component on the Cat GameObject. It controls
@@ -31,24 +29,26 @@ public class CatW5 : MonoBehaviour
         //          changing that axis?
         //      Should I modify translation with Vector addition, or multiplication,
         //          or both?
-        //
-        // STEP 2
-        // After Step 1 is working, add more code to make it possible to flip
-        //      the player's control scheme.
-        // The _flipWSControls member variable, which we can change in the Inspector,
-        //      determines if our controls should be flipped.
-        // If _flipWSControls is true, interpret the value of translation as the
-        //      OPPOSITE value, so that W moves the player backwards and S moves
-        //      them forwards.
-        //
-        // MULTIPLY one of your vectors with a certain value to do this. >:)
-
+    
+    private void Update()
+    {
         Vector3 translation = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            translation.z = 1 ;
+            transform.position += 3* Vector3.forward * Time.deltaTime;
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            translation.z = -1;
+            transform.position += 3* Vector3.back * Time.deltaTime;
+        }
         
-
-
-        // STEP 1 & 2 ---------------------------------------------------------
-
+       
+       
+       
         float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);
 
@@ -61,4 +61,22 @@ public class CatW5 : MonoBehaviour
             _animator.SetBool(_isWalkingName, false);
         }
     }
-}
+        //
+        // STEP 2
+        // After Step 1 is working, add more code to make it possible to flip
+        //      the player's control scheme.
+        // The _flipWSControls member variable, which we can change in the Inspector,
+        //      determines if our controls should be flipped.
+        // If _flipWSControls is true, interpret the value of translation as the
+        //      OPPOSITE value, so that W moves the player backwards and S moves
+        //      them forwards.
+        //
+        // MULTIPLY one of your vectors with a certain value to do this. >:)
+
+        
+
+
+        // STEP 1 & 2 ---------------------------------------------------------
+
+        
+   }
