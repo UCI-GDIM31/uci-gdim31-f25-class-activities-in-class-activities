@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CatW5 : MonoBehaviour
 {
     [SerializeField] private bool _flipWSControls;
-    [SerializeField] private float _moveSpeed = 1.0f;
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private float _turnSpeed = 1.0f;
     [SerializeField] private Animator _animator;
 
@@ -32,24 +33,37 @@ public class CatW5 : MonoBehaviour
         //      Should I modify translation with Vector addition, or multiplication,
         //          or both?
         //
-        // STEP 2
-        // After Step 1 is working, add more code to make it possible to flip
-        //      the player's control scheme.
-        // The _flipWSControls member variable, which we can change in the Inspector,
-        //      determines if our controls should be flipped.
-        // If _flipWSControls is true, interpret the value of translation as the
-        //      OPPOSITE value, so that W moves the player backwards and S moves
-        //      them forwards.
-        //
-        // MULTIPLY one of your vectors with a certain value to do this. >:)
-
         Vector3 translation = Vector3.zero;
-        
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            translation = Vector3.forward;
+            transform.Translate (translation * _moveSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            translation = Vector3.back;
+            transform.Translate (translation * _moveSpeed * Time.deltaTime);
+        }
+            // STEP 2
+            // After Step 1 is working, add more code to make it possible to flip
+            //      the player's control scheme.
+            // The _flipWSControls member variable, which we can change in the Inspector,
+            //      determines if our controls should be flipped.
+            // If _flipWSControls is true, interpret the value of translation as the
+            //      OPPOSITE value, so that W moves the player backwards and S moves
+            //      them forwards.
+            //
+            // MULTIPLY one of your vectors with a certain value to do this. >:)
 
 
-        // STEP 1 & 2 ---------------------------------------------------------
 
-        float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
+
+
+            // STEP 1 & 2 ---------------------------------------------------------
+
+            float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);
 
         if (translation.magnitude != 0.0f || rotation != 0.0f)
