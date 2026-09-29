@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class CatW3 : MonoBehaviour
@@ -6,176 +6,129 @@ public class CatW3 : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    // The speed that the player moves at
-    [SerializeField] private float _speed;
-    // The velocity of the player's jump
-    [SerializeField] private float _jump;
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _jump = 10f;
     [SerializeField] private TMP_Text _healthText;
     [SerializeField] private TMP_Text _pointsText;
     [SerializeField] private TMP_Text _speechText;
-    [SerializeField] private float _maxHealth = 5;
-    [SerializeField] private bool _destroyCatWhenDead;
+    [SerializeField] private float _maxHealth = 5f;
 
     private bool _facingLeft;
     private bool _isGrounded = true;
     private int _points = 0;
     private float _health;
+    private bool _isDead = false;
 
     // ------------------------------------------------------------------------
-    private void Start ()
+    private void Awake()
+    {
+        if (_rigidbody == null)
+            _rigidbody = GetComponent<Rigidbody2D>();
+
+        if (_animator == null)
+            _animator = GetComponent<Animator>();
+
+        if (_spriteRenderer == null)
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    // ------------------------------------------------------------------------
+    private void Start()
     {
         _health = _maxHealth;
+        UpdateUI();
     }
 
     // ------------------------------------------------------------------------
-    // Update is called every frame
     private void Update()
     {
-        // Detect input to move player left/right
-        _rigidbody.linearVelocity = new Vector2(
-            Input.GetAxis("Horizontal") * _speed,
-            _rigidbody.linearVelocity.y
-        );
+        if (_rigidbody == null || _isDead) return;
 
-        // Detect input to jump
-        if (Input.GetAxis("Vertical") > 0 && _isGrounded)
+        float moveX = 0f;
+
+        if (Input.GetKey(KeyCode.A)) moveX = -1f;
+        else if (Input.GetKey(KeyCode.D)) moveX = 1f;
+
+        _rigidbody.linearVelocity = new Vector2(moveX * _speed, _rigidbody.linearVelocity.y);
+
+        if (Input.GetKeyDown(KeyCode.W) && _isGrounded)
         {
             _isGrounded = false;
-
-            _rigidbody.linearVelocity = new Vector2(
-                _rigidbody.linearVelocity.x,
-                _jump
-            );
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _jump);
         }
 
-        // Change character facing 
-        if (Input.GetAxis("Horizontal") < 0 && !_facingLeft)
-        {
-            _spriteRenderer.flipX = true;
-            _facingLeft = true;
-        }
-        else if (Input.GetAxis("Horizontal") > 0 && _facingLeft)
-        {
-            _spriteRenderer.flipX = false;
-            _facingLeft = false;
-        }
+        if (moveX < 0 && !_facingLeft) { _spriteRenderer.flipX = true; _facingLeft = true; }
+        else if (moveX > 0 && _facingLeft) { _spriteRenderer.flipX = false; _facingLeft = false; }
 
-        // Set animation state parameters
-        _animator.SetBool("walking", _rigidbody.linearVelocity.x != 0.0f);
+        if (_animator != null)
+            _animator.SetBool("walking", Mathf.Abs(moveX) > 0.01f);
     }
 
     // ------------------------------------------------------------------------
-    // This method is called by Unity whenever the cat hits something
-    //      whose collider's "Is Trigger" option is checked.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Item"))
+        if (other.gameObject.CompareTag("Item"))
         {
             _points++;
-            _pointsText.text = "points: " + _points;
+            if (_pointsText != null) _pointsText.text = "points: " + _points;
             Destroy(other.gameObject);
         }
     }
 
     // ------------------------------------------------------------------------
-    // This method is called by Unity whenever the cat hits something.
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("ground"))
-        {
+        if (collision.gameObject.CompareTag("ground"))
             _isGrounded = true;
-        }
 
         BallW3 ball = collision.gameObject.GetComponent<BallW3>();
         if (ball != null)
         {
             ChangeColor(ball);
-
-            // STEP 2 ---------------------------------------------------------
-            // Below this comment, CALL the method named DecreaseHealth.
-            // Notice this method's return type is void- that means we don't
-            //      have to store the result anywhere.
-            
-
-            // STEP 2 ---------------------------------------------------------
-
-            // STEP 6 ---------------------------------------------------------
-            // Write an IF STATEMENT below that does the following:
-            // IF the cat's health is below or equal to 0, AND
-            //      the _destroyCatWhenDead flag is true,
-            // then CALL the DestroyCat method.
-            //
-            // Try toggling the Destroy Cat When Dead setting on the Inspector,
-            //      and see how the cat is removed ONLY when it's checked!
-            
-
-            // STEP 6 ---------------------------------------------------------
+            DecreaseHealth();
         }
     }
 
-    // STEP 3 -----------------------------------------------------------------
-    // This method decreases the player's health and updates the UI.
-    //
-    // Fill in the method BODY.
-    // You do NOT need to change the method signature (return or parameters).
-    //
-    // In this method:
-    // 1. Decrease the value of _health by one point.
-    // 2. Uncomment and fix the next line so that it change the value of
-    //      _healthText.text to display "health = " and the new value of _health.
-    //    '_healthText' is a TMP_Text Component, and 'text' is the variable that
-    //     decides the text that displays in the UI for this Component.
-    //      Hint: there's just one operator missing!
+    // ------------------------------------------------------------------------
     private void DecreaseHealth()
     {
-        // write Step 3 below this comment!
+        if (_isDead) return;
 
+        _health--;
+        UpdateUI();
 
-        // STEP 5 -------------------------------------------------------------
-        // Once you've finished Step 4, CALL the GetHealthSpeechText method
-        //      and store the result in _speechText's text variable.
-        // This will look very similar to the above line to change _healthText ;)
-
-
-        // STEP 5 -------------------------------------------------------------
+        if (_health <= 0)
+        {
+            Die();
+        }
     }
-    // STEP 3 -----------------------------------------------------------------
 
-    // STEP 4 -----------------------------------------------------------------
-    // This method decides what TEXT to display depending on how much health
-    //      the cat has left, to warn the player about low health.
-    //
-    // First, UNCOMMENT the method signature and brackets.
-    // Then, replace the ??? with the RETURN TYPE you think the method should use.
-    //
-    // Finally, fill out the method BODY. This method should:
-    // 1. IF the value of _health is less than HALF of _maxHealth,
-    //      return "OH NO!".
-    // 2. Otherwise, return "ouch".
-
-    //private ??? GetHealthSpeechText()
-    //{
-        // put the method body here!
-        
-    //}
-    
-    // STEP 4 -----------------------------------------------------------------
+    private void UpdateUI()
+    {
+        if (_healthText != null) _healthText.text = "health = " + _health;
+        if (_speechText != null) _speechText.text = GetHealthSpeechText();
+    }
 
     // ------------------------------------------------------------------------
+    private string GetHealthSpeechText()
+    {
+        return _health < _maxHealth / 2f ? "OH NO!!" : "ouch";
+    }
+
     private void ChangeColor(BallW3 ball)
     {
-        // STEP 7 -------------------------------------------------------------
-        // Set the value of the _spriteRenderer's color variable to the value
-        //      of the ball's ballRenderer's color variable.
-        // This means you'll need to use the '.' twice to get to the color :)
-
-
-        // STEP 7 -------------------------------------------------------------
+        if (_spriteRenderer != null && ball != null && ball.ballRenderer != null)
+            _spriteRenderer.color = ball.ballRenderer.color;
     }
-    
+
     // ------------------------------------------------------------------------
-    private void DestroyCat()
+    private void Die()
     {
+        _isDead = true;
+        if (_rigidbody != null)
+            _rigidbody.linearVelocity = Vector2.zero;
+
+        // ✅ Destroy the GameObject immediately
         Destroy(gameObject);
     }
 }

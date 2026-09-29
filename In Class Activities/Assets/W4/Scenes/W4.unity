@@ -5755,7 +5755,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 45.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5965,6 +5965,7 @@ GameObject:
   - component: {fileID: 460420664379484398}
   - component: {fileID: 3588354822138079051}
   - component: {fileID: 1596687674897945473}
+  - component: {fileID: 3588354822138079052}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -6204,13 +6205,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430556871525748952}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.58}
+  m_LocalRotation: {x: 0.70035446, y: -0, z: -0, w: 0.7137953}
+  m_LocalPosition: {x: 0, y: 0.690051, z: -0.21944165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6020308597634792877}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 88.911, y: 0, z: 0}
 --- !u!4 &2444631991424610146
 Transform:
   m_ObjectHideFlags: 0
@@ -6428,6 +6429,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948129265799852628}
   m_Mesh: {fileID: 195513653943723228, guid: ed744d2a2da200349af7b11734d247ad, type: 3}
+--- !u!65 &3588354822138079052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948129265799852628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.81053734, y: 0.44845736, z: 0.47291297}
+  m_Center: {x: -0.011299967, y: -0.14477819, z: -0.12501815}
 --- !u!4 &3596962750530470011
 Transform:
   m_ObjectHideFlags: 0
@@ -6941,6 +6963,9 @@ GameObject:
   - component: {fileID: 6020308597634792877}
   - component: {fileID: 6397291155275392794}
   - component: {fileID: 6397291155275392798}
+  - component: {fileID: 6397291155275392800}
+  - component: {fileID: 6397291155275392799}
+  - component: {fileID: 6397291155275392801}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -6987,8 +7012,72 @@ MonoBehaviour:
   _kickUpwardForce: 1
   _kickForce: 2
   _jumpForce: 5
-  _rigidBody: {fileID: 0}
+  _rigidBody: {fileID: 6397291155275392799}
   _animator: {fileID: 6397291155275392794}
+--- !u!54 &6397291155275392799
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397291155275392791}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &6397291155275392800
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397291155275392791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.24451135
+  m_Height: 0.4890227
+  m_Direction: 1
+  m_Center: {x: 0.0023271292, y: 0.24766348, z: 0.0053908825}
+--- !u!114 &6397291155275392801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6397291155275392791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d99774276e3f43b192a53df5fde03de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BounceOffWall
+  _rigidBody: {fileID: 6397291155275392799}
+  _bounceForce: 8
 --- !u!1 &6499904795538962815
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,7 +7167,7 @@ Transform:
   m_GameObject: {fileID: 7741058300408910497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10055652, y: 0.206, z: -1.6760001}
+  m_LocalPosition: {x: -0.069, y: 0.206, z: -1.6760001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7255,6 +7344,9 @@ GameObject:
   - component: {fileID: 6307793460636747710}
   - component: {fileID: 8101201615804560244}
   - component: {fileID: 8101201615804560248}
+  - component: {fileID: 8101201615804560250}
+  - component: {fileID: 8101201615804560249}
+  - component: {fileID: 8101201615804560251}
   m_Layer: 0
   m_Name: SoccerBall
   m_TagString: Ball
@@ -7341,6 +7433,68 @@ MonoBehaviour:
   _pointsText: {fileID: 1584363612}
   _timeText: {fileID: 109916336}
   _goalVFX: {fileID: 67938281}
+--- !u!54 &8101201615804560249
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741058300408910497}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &8101201615804560250
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741058300408910497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.07068241
+  m_Center: {x: -0.000056624413, y: 0.00011789426, z: 0.00046431273}
+--- !u!114 &8101201615804560251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7741058300408910497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d99774276e3f43b192a53df5fde03de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BounceOffWall
+  _rigidBody: {fileID: 8101201615804560249}
+  _bounceForce: 8
 --- !u!4 &8115783459852817865
 Transform:
   m_ObjectHideFlags: 0
@@ -7492,7 +7646,7 @@ Transform:
   m_GameObject: {fileID: 7030163164489607700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
