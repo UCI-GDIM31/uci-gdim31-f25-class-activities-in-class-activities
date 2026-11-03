@@ -38,7 +38,7 @@ Table 6
 1. We added the Capsule Collider to the Cat parent, and set the Direction to the Z-axis. This made it so the collider could be modified to make a horizontal capsule, and not a sphere or a vertical capsule. This way, the cat's collisions also do not touch the floor and make it float. We changed the X and Z axes' rotation so the cat didn't flip around as it hit the ball.
 2. We decided that, in order to make the cat hit the ball, the ball to be able to hit the goalpost but still pass through it to score a goal, and bounce off the wall, the Cat and SoccerBall needed a Rigidbody to be able to collide. The goalpost needed to have "Is Trigger" checked in order to score points once the Ball collided with it.
 
-### Week 6 (week 5 activity)
+### W6 (week 5 activity)
 ### Plan
 We decided on MonoBehaviour to make the DeerW5 editable. The variables we decided on were Transform and movement speed for the deer. For the methods, we chose Start() to tell the deer to move, Update() for movement speed, and GetComponent<> to get NavMeshAgent so the deer could actually move.
 
