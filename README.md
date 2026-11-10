@@ -45,6 +45,16 @@ We decided on MonoBehaviour to make the DeerW5 editable. The variables we decide
 ### Results
 We ended up not needing movement speed or Update to keep track of the deer moving, but we did end up using SetDestination, a new variable, to get the deer to mvoe to a certain spot. Without it, the deer would not move.
 
+### W7 (week 6 activity)
+### Google Doc
+I was in charge of Unity Code.
+https://docs.google.com/document/d/1kR28s3UFUojYeTBAymLJ1hQA6LlfCwT3vaz3uHdMohE/edit?tab=t.0
+
+### Notes
+Likely going to need Start or Update. Defintelty a speed variable, and a way to find the position of the bats.
+### Plan
+For our member variables we made a speed variable and positions for the bat and the player. The methods needed are Update, GetComponent, and two to start and end the chasing sequence. These methods should tell the bat when to start chasing, when to stop chasing, to get the proximity of the player to know when to chase, and initiate the action of chasing.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
