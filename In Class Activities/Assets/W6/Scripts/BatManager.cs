@@ -12,7 +12,7 @@ public class BatManager : MonoBehaviour
     // STEP 1 -----------------------------------------------------------------
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
-    
+    [SerializeField] private BatW6[] _bats = new BatW6[10]
     // STEP 1 -----------------------------------------------------------------
 
     // STEP 3 -----------------------------------------------------------------
@@ -22,7 +22,7 @@ public class BatManager : MonoBehaviour
     
     // STEP 3 -----------------------------------------------------------------
 
-    [SerializeField] private float[] _newTextTimers;
+    //[SerializeField] private float[] _newTextTimers;
 
     // ------------------------------------------------------------------------
     private void Start()
